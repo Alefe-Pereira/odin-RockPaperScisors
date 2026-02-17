@@ -8,7 +8,78 @@
 <body>
     
     <script>
+
+        let humanScore = 0;
+        let computerScore = 0;
+
         console.log("Bem-vindo ao jogo de Pedra, Papel e Tesoura!");
+
+        // Gerar a escolha do computador
+        function getComputerChoice() {
+        let computerChoice = Math.random();
+        if (computerChoice < 0.34) {    
+            computerChoice = "Pedra";
+        } else if (computerChoice <= 0.67) {
+            computerChoice = "Papel";
+        } else {
+            computerChoice = "Tesoura";
+        }
+        console.log("Computador escolheu:", computerChoice);
+        return computerChoice;
+    }
+
+        // Solicitar a escolha do usuário
+        function getUserChoice() {
+        let userChoice = prompt("Digite sua escolha: Pedra, Papel ou Tesoura");
+
+        console.log("Você escolheu:", userChoice);
+        return userChoice;
+        }
+        
+        //Jogar uma rodada
+        function playRound(userChoice, computerChoice) {
+
+        userChoice = userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
+
+        if (userChoice === computerChoice) {
+            console.log("Empate!");
+        } else if (
+            (userChoice === "Pedra" && computerChoice === "Tesoura") ||
+            (userChoice === "Papel" && computerChoice === "Pedra") ||
+            (userChoice === "Tesoura" && computerChoice === "Papel")
+        ) {
+            console.log("Você venceu!");
+            humanScore++;
+        } else {
+            console.log("Computador venceu!");
+            computerScore++;
+        }
+
+    }
+  
+
+        //jogar o jogo completo
+        function playGame() {
+        for (let i = 0; i < 5; i++) {
+            console.log(`--- Rodada ${i + 1} ---`);
+            const userSelection = getUserChoice();
+            const computerSelection = getComputerChoice();
+            playRound(userSelection, computerSelection);
+            console.log("Placar - Você:", humanScore, "Computador:", computerScore);
+        }
+
+        console.log("=== Resultado Final ===");
+
+  if (humanScore > computerScore) {
+    console.log("Você venceu o jogo! Uhuuul");
+  } else if (computerScore > humanScore) {
+    console.log("O computador venceu o jogo! Viiix");
+  } else {
+    console.log("O jogo terminou empatado!");
+  }
+}
+
+playGame();
     </script>
 </body>
 </html>
