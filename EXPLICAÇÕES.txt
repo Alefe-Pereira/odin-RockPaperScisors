@@ -1,0 +1,39 @@
+- testar pra ver se funciona depois
+function playRound(playerChoice, computerChoice) {
+
+            const results = [
+                { player: "Rock", computer: "Scissors", result: "win" },
+                { player: "Paper", computer: "Rock", result: "win" },
+                { player: "Scissors", computer: "Paper", result: "win" },
+                { player: "Scissors", computer: "Rock", result: "lose" },
+                { player: "Rock", computer: "Paper", result: "lose" },
+                { player: "Paper", computer: "Scissors", result: "lose" }
+            ];
+
+            const roundResult = results.find(r => r.player === playerChoice && r.computer === computerChoice);
+
+            if (roundResult) {
+                document.getElementById("result").innerHTML = `You ${roundResult.result}!`;
+                if (roundResult.result === "win") {
+                    playerScore++;
+                } else {
+                    computerScore++;
+                }
+            } else {
+                document.getElementById("result").innerHTML = "It's a tie!";
+            }
+
+            document.getElementById("score").innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+        }
+
+- por que usar Data-choice?
+
+Usar `data-choice` foi a melhor opção porque ele foi criado exatamente para **armazenar dados personalizados relacionados ao elemento**, 
+sem misturar estrutura, estilo e lógica.
+
+Diferente do `id`, que deve ser único e serve apenas para identificar um elemento específico, e da `class`, 
+que é voltada para estilo e agrupamento, o `data-*` permite guardar informações da regra do programa 
+(como a jogada escolhida) de forma semântica e organizada.
+
+Assim, o código fica mais limpo, mais escalável e mais fácil de manter, além de permitir acessar a escolha diretamente no JavaScript 
+usando `dataset`, sem depender do texto visível do botão.
