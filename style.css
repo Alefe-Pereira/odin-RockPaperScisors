@@ -25,6 +25,7 @@ section{
     filter: brightness(1.2);
 }
 
+
 .active {
     transform: scale(1.1);
     filter: brightness(1.2);
@@ -43,6 +44,11 @@ section{
     width: 500px;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.436) 5px 5px 10px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
 }
 
 footer {
