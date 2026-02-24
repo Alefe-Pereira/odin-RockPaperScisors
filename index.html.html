@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Rock Paper Scissors</h1>
+</header>
+
+<section>
+
+    <div style ="text-align: center;">
+        <p id="result">Result will be displayed here.</p>
+    </div>
+
+    <div class="playerMove">
+        <h3></h3>
+        <h3 id="playerChoiceDisplay">Player's Move:</h3>  <!-- id, não class -->
+        <div class="playerImgs"> 
+            <img src="./imgs/Rock.png" alt="Rock" class="pImg" data-choice="Rock">
+            <img src="./imgs/Paper.png" alt="Paper" class="pImg" data-choice="Paper">
+            <img src="./imgs/Scissors.png" alt="Scissors" class="pImg" data-choice="Scissors">
+        </div>
+    </div>  <!-- fechando playerMove -->
+
+    <div class="computerMove">
+        <h3></h3>
+        <h3 id="computerChoiceDisplay">Computer's Move:</h3>  <!-- id, não class -->
+        <div class="computerImgs"> 
+        <img src="./imgs/Rock.png" alt="Rock" class="Rock">   
+        <img src="./imgs/Paper.png" alt="Paper" class="Paper">
+        <img src="./imgs/Scissors.png" alt="Scissors" class="Scissors">
+        </div>
+    </div>  <!-- fechando computerMove -->
+
+    
+
+    <div style="text-align: center;">
+        <p><strong>Score:</strong></p>
+        <p id="score">Player: 0 | Computer: 0</p>
+    </div>
+
+    <div>
+        <button class="reset" onclick="resetGame()">Play Again?</button>
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; TheOdinProject</p>
+</footer>
+
+<script src="script.js".startGame()></script>
+<script>startGame();</script>
+
+</body>
+</html>
